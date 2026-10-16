@@ -90,11 +90,11 @@ def update_marks():
         if not 0 <= marks <= 100:
             print("Invalid marks! Marks must be between 0 and 100.")
             return
-    else:
         student.marks = marks        
-        print(f"{student.ID}: Marks updated successfully!)
-            
-
+        print(f"{student.ID}: Marks updated successfully!")
+    else:
+        print("Student not Found!")
+    
 while True:
     print(
         "\nStudent Management System"
@@ -103,7 +103,8 @@ while True:
         "\n3. Display all students"
         "\n4. Check pass/fail status"
         "\n5. Exit"
-    )
+        "\n6. Update students marks"
+        )
 
     user_input = input("Enter your choice: ").strip()
 
@@ -118,5 +119,7 @@ while True:
     elif user_input == "5":
         print("Program exited.")
         break
+    elif user_input == "6":
+        update_marks()
     else:
-        print("Invalid choice! Please enter a number from 1 to 5.")
+        print("Invalid choice! Please enter a number from 1 to 6.")
