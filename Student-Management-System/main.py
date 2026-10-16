@@ -75,6 +75,25 @@ def check_student_status():
     else:
         print("Student not found!")
 
+def update_marks():
+    search_id = input("Enter the student id you want to update marks for: ")
+    student = next((s for s in students if student.ID == search_id),None)
+
+    if student is not None:
+        
+        try:
+            marks = int(input("Enter student marks (0-100): "))
+        except ValueError:
+            print("Please enter a valid whole number for marks.")
+            return
+
+        if not 0 <= marks <= 100:
+            print("Invalid marks! Marks must be between 0 and 100.")
+            return
+    else:
+        student.marks = marks        
+        print(f"{student.ID}: Marks updated successfully!)
+            
 
 while True:
     print(
